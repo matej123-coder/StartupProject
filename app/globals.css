@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 @import "tailwindcss";
-
+@plugin "@tailwindcss/typography";
 @custom-variant dark (&:is(.dark *));
 @tailwind base;
 @tailwind components;
@@ -189,11 +189,11 @@
 
   /* view */
   .view-container {
-    @apply flex justify-end items-center mt-5 fixed bottom-3 right-3;
+    @apply flex justify-end items-center mt-5 fixed bottom-3 right-3 ;
   }
 
   .view-text {
-    @apply font-medium text-[16px] bg-white/100 px-4 py-2 rounded-lg capitalize;
+    @apply font-medium text-[16px] text-white px-4 py-2 rounded-lg capitalize bg-primary;
   }
 
   .category-tag {
