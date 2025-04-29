@@ -52,3 +52,29 @@ image,
 bio
 }
 `)
+export const AUTHOR_BY_ID = defineQuery(`
+*[_type=="author" && _id == $id][0]{
+_id,
+id,
+name,
+username,
+email,
+image,
+bio
+}
+`)
+export const GET_ALL_STARTUPS_BY_USER_ID= defineQuery(`
+*[_type=="startup" && author._ref==$id] | order(_createdAt desc){
+    _id,
+    title,
+    slug, 
+    _createdAt,
+    author -> {
+    name,_id,image,bio,username
+    }, 
+    views, 
+    description, 
+    category, 
+    image,
+    pitch
+}`)
