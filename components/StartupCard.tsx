@@ -5,10 +5,11 @@ import Image from "next/image";
 import {Button} from "@/components/ui/button";
 import {Author, Startup} from "@/sanity/types";
 import {Skeleton} from "@/components/ui/skeleton";
-export type StartupTypeCard = Omit<Startup, "author"> & {author?: Author}
-const StartupCard=({post}:{post:StartupTypeCard})=>{
-const {_createdAt,views,author,title,_id,category,image,description} = post;
-  return(
+
+export type StartupTypeCard = Omit<Startup, "author"> & { author?: Author }
+const StartupCard = ({post}: { post: StartupTypeCard }) => {
+  const {_createdAt, views, author, title, _id, category, image, description} = post;
+  return (
       <li className={"startup-card group]:"}>
         <div className={"flex-between"}>
           <p className={"startup-card_date"}>
@@ -42,23 +43,23 @@ const {_createdAt,views,author,title,_id,category,image,description} = post;
           </Link>
         </div>
         <div className={"flex-between gap-3 mt-5 ml-4"}>
-            <Link href={`/?query=${category?.toLowerCase()}`}>
-              <p className={"text-16-medium line-clamp-1"}>{category}</p>
-            </Link>
+          <Link href={`/?query=${category?.toLowerCase()}`}>
+            <p className={"text-16-medium line-clamp-1"}>{category}</p>
+          </Link>
           <Button className={"startup-card_btn"} asChild={true}>
-              <Link href={`/startup/${_id}`} >
-                Details
-              </Link>
+            <Link href={`/startup/${_id}`}>
+              Details
+            </Link>
           </Button>
         </div>
       </li>
   )
 }
-export const StartupCardSkeleton=()=>(
+export const StartupCardSkeleton = () => (
     <>
-      {[0,1,2,3,4,5].map((index:number)=>(
-          <li key={cn('skeleton',index)}>
-              <Skeleton className={"startup-card_skeleton"}/>
+      {[0, 1, 2, 3, 4, 5].map((index: number) => (
+          <li key={cn('skeleton', index)}>
+            <Skeleton className={"startup-card_skeleton"}/>
           </li>
       ))}
     </>

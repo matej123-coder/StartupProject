@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type {Metadata} from "next";
 
 import "./globals.css";
 import localFont from "next/font/local";
@@ -62,18 +62,18 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-  children,
-}: Readonly<{
+                                     children,
+                                   }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+      <html lang="en">
       <body
-        className={workSans.variable}
+          className={workSans.variable}
       >
-        {children}
+      {children}
       <Toaster/>
       </body>
-    </html>
+      </html>
   );
 }

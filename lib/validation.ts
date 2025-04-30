@@ -1,4 +1,5 @@
 import {z} from 'zod'
+
 export const formSchema = z.object({
   title: z.string().min(3, "Title is required").max(100, "Title is too long"),
   description: z
@@ -14,7 +15,7 @@ export const formSchema = z.object({
       .url("Invalid Image URL")
       .refine(async (url) => {
         try {
-          const res = await fetch(url, { method: "HEAD" });
+          const res = await fetch(url, {method: "HEAD"});
           const contentType = res.headers.get("content-type");
           return contentType?.startsWith("image/");
         } catch {
