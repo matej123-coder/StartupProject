@@ -21,3 +21,6 @@ PitchDeck is a full-stack web application built with **Next.js 15**, **Sanity.io
 - **Markdown Rendering**: Markdown-it
 
 ---
+## 🌐 Live Demo
+
+🔗 [View the Live Project](https://startup-project-xi.vercel.app/)
